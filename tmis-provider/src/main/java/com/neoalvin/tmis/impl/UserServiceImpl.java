@@ -1,7 +1,7 @@
-package com.neoalvin.tmis.provider;
+package com.neoalvin.tmis.impl;
 
 import com.neoalvin.tmis.api.IUserService;
-import com.neoalvin.tmis.api.User;
+import com.neoalvin.tmis.model.User;
 
 /**
  * Created by alvin on 2017/4/17.

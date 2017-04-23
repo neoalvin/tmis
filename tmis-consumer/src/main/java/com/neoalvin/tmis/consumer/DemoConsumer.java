@@ -14,7 +14,6 @@ public class DemoConsumer {
 
         //测试Rest服务
         getUser("http://localhost:" + port + "/services/users/1.json");
-        getUser("http://localhost:" + port + "/services/users/1.xml");
 
         //测试常规服务
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath*:META-INF/spring/*.xml");

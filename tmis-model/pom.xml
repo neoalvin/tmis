@@ -9,27 +9,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.neoalvin.tmis</groupId>
-  <artifactId>tmis-api</artifactId>
+  <artifactId>tmis-model</artifactId>
   <packaging>jar</packaging>
 
-  <name>tmis-api</name>
+  <name>tmis-model</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.neoalvin.tmis</groupId>
-      <artifactId>tmis-model</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.neoalvin.tmis</groupId>
-      <artifactId>tmis-common</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
-    </dependency>
-  </dependencies>
-
 </project>

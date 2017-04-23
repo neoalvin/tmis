@@ -1,5 +1,7 @@
 package com.neoalvin.tmis.api;
 
+import com.neoalvin.tmis.model.User;
+
 import javax.validation.constraints.Min;
 
 /**

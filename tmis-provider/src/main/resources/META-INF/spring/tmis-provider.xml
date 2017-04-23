@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
     http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-  <dubbo:application name="tmis-provider" owner="programmer" organization="dubbox"/>
+  <dubbo:application name="tmis-provider" owner="alvin" organization="hitwh"/>
 
   <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
@@ -20,9 +20,9 @@
 
   <dubbo:service interface="com.neoalvin.tmis.api.IUserRestService" ref="userRestService" protocol="rest" validation="true"/>
 
-  <bean id="userService" class="com.neoalvin.tmis.provider.UserServiceImpl"/>
+  <bean id="userService" class="com.neoalvin.tmis.impl.UserServiceImpl"/>
 
-  <bean id="userRestService" class="com.neoalvin.tmis.provider.UserRestServiceImpl">
+  <bean id="userRestService" class="com.neoalvin.tmis.impl.UserRestServiceImpl">
     <property name="userService" ref="userService"/>
   </bean>
 

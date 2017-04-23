@@ -1,5 +1,5 @@
 package com.neoalvin.tmis.api;
-
+import com.neoalvin.tmis.model.User;
 import com.alibaba.dubbo.common.serialize.support.SerializationOptimizer;
 import java.util.Collection;
 import java.util.LinkedList;

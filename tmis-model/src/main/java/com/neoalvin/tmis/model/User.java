@@ -1,4 +1,4 @@
-package com.neoalvin.tmis.api;
+package com.neoalvin.tmis.model;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import javax.validation.constraints.Min;
@@ -10,8 +10,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable {
 
   @NotNull
@@ -19,7 +17,6 @@ public class User implements Serializable {
   private Long id;
 
   @JsonProperty("username")
-  @XmlElement(name = "username")
   @NotNull
   @Size(min = 6, max = 50)
   private String name;

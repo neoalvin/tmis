@@ -1,10 +1,10 @@
-package com.neoalvin.tmis.provider;
+package com.neoalvin.tmis.impl;
 
+import com.neoalvin.tmis.model.User;
 import com.neoalvin.tmis.api.IUserRestService;
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.neoalvin.tmis.api.IUserService;
-import com.neoalvin.tmis.api.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
