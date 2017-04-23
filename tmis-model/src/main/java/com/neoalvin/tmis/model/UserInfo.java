@@ -1,18 +1,27 @@
 package com.neoalvin.tmis.model;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+
 /**
  * 用户身份信息数据类
  * Created by alvin on 2017/4/23.
  */
-public class UserInfo {
+public class UserInfo implements Serializable {
   /**
    * 用户名
    */
-  private String username;
+  @NotNull
+  @JsonProperty("userId")
+  private String userId;
 
   /**
    * 密码摘要
    */
+  @NotNull
+  @JsonProperty("pwdCode")
   private String pwdCode;
 
   /**
@@ -23,20 +32,20 @@ public class UserInfo {
 
   /**
    * 带参构造函数
-   * @param username
+   * @param userId
    * @param pwdCode
    */
-  public UserInfo(String username, String pwdCode) {
-    this.username = username;
+  public UserInfo(String userId, String pwdCode) {
+    this.userId = userId;
     this.pwdCode = pwdCode;
   }
 
-  public String getUsername() {
-    return username;
+  public String getUserId() {
+    return userId;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setUserId(String userId) {
+    this.userId = userId;
   }
 
   public String getPwdCode() {
@@ -50,7 +59,7 @@ public class UserInfo {
   @Override
   public String toString() {
     return "UserInfo{" +
-        "username='" + username + '\'' +
+        "userId='" + userId + '\'' +
         ", pwdCode='" + pwdCode + '\'' +
         '}';
   }

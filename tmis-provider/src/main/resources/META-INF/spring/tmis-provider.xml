@@ -20,11 +20,15 @@
 
   <dubbo:service interface="com.neoalvin.tmis.api.IUserRestService" ref="userRestService" protocol="rest" validation="true"/>
 
+  <dubbo:service interface="com.neoalvin.tmis.api.IUserAuthService" ref="userAuthService" protocol="rest" validation="true"/>
+
   <bean id="userService" class="com.neoalvin.tmis.impl.UserServiceImpl"/>
 
   <bean id="userRestService" class="com.neoalvin.tmis.impl.UserRestServiceImpl">
     <property name="userService" ref="userService"/>
   </bean>
+
+  <bean id="userAuthService" class="com.neoalvin.tmis.impl.UserAuthServiceImpl"/>
 
 
 </beans>

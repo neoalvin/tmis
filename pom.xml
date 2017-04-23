@@ -11,6 +11,7 @@
     <module>tmis-consumer</module>
     <module>tmis-model</module>
     <module>tmis-common</module>
+    <module>tmis-dao</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -21,7 +22,7 @@
     <!-- 项目使用UTF-8进行编码 -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- junit版本号 -->
-    <junit.version>3.8.1</junit.version>
+    <junit.version>4.12</junit.version>
     <!-- dubbo版本 -->
     <dubbo.version>2.8.4</dubbo.version>
     <!-- zkclient版本 -->
