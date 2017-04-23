@@ -9,8 +9,7 @@
 
   <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-  <dubbo:reference id="userRestService" interface="com.neoalvin.tmis.api.IUserRestService"/>
+  <dubbo:reference id="userAuthService" interface="com.neoalvin.tmis.api.IUserAuthService"/>
 
-  <dubbo:reference id="userService" interface="com.neoalvin.tmis.api.IUserService"/>
 
 </beans>

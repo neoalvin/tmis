@@ -54,7 +54,7 @@ public class UserAuthServiceImpl implements IUserAuthService{
       //入口日志，打印用户ID
       LOGGER.info("[UserAuthServiceImpl]: Start to add user information. userId = " + userInfo.getUserId());
 
-      //校验用户信息格式，校验失败则直接返回错误码
+      //校验用户信息是否已存在，存在则直接返回错误码
       retCode = UserInfoValidator.checkUserInfo(userInfo);
       if (CommonConstants.RETCODE_ERROR.equals(retCode.getCode())) {
         return retCode;
@@ -100,15 +100,6 @@ public class UserAuthServiceImpl implements IUserAuthService{
 
       //入口日志，打印用户ID
       LOGGER.info("[UserAuthServiceImpl]: Start to validate user information. userId = " + userInfo.getUserId());
-
-      //校验用户信息格式，校验失败则直接返回错误码
-      retCode = UserInfoValidator.checkUserInfo(userInfo);
-      if (CommonConstants.RETCODE_ERROR.equals(retCode.getCode())) {
-        return retCode;
-      }
-
-      //加密明文密码
-      userInfo.setPwdCode(DataSecurityCommonUtil.EncoderByMd5(userInfo.getPwdCode()));
 
       //验证用户信息
       retCode = UserInfoValidator.validateUserByIdAndPwd(userInfo);

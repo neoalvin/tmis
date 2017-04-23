@@ -1,7 +1,5 @@
 package com.neoalvin.tmis.consumer;
 
-import com.neoalvin.tmis.api.IUserService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
@@ -9,18 +7,18 @@ import javax.ws.rs.core.Response;
 
 public class DemoConsumer {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         final String port = "8888";
 
         //测试Rest服务
-        getUser("http://localhost:" + port + "/services/users/1.json");
+        getUser("http://localhost:" + port + "/services/user/1.json");
 
         //测试常规服务
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath*:META-INF/spring/*.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath*:META-INF/spring*//*.xml");
         context.start();
-        IUserService userService = context.getBean(IUserService.class);
+        IUserAuthService userService = context.getBean(IUserAuthService.class);
         System.out.println(userService.getUser(1L));
-    }
+    }*/
 
 
     private static void getUser(String url) {
