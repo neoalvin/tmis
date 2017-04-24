@@ -18,7 +18,7 @@ public class RetCode {
    * 返回信息
    */
   @JsonProperty("message")
-  private String message;
+  private String message = "success";
 
   public String getCode() {
     return code;

@@ -7,11 +7,12 @@
   <version>1.0.1-SNAPSHOT</version>
   <modules>
     <module>tmis-api</module>
-    <module>tmis-provider</module>
+    <module>tmis-producer</module>
     <module>tmis-consumer</module>
     <module>tmis-model</module>
     <module>tmis-common</module>
     <module>tmis-dao</module>
+    <module>tmis-llt</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -29,8 +30,12 @@
     <zkclient.version>0.2</zkclient.version>
     <!-- zookeeper版本 -->
     <zookeeper.version>3.3.6</zookeeper.version>
+    <!--kafka版本-->
+    <kafka.version>0.10.2.0</kafka.version>
     <!--spring版本-->
     <spring.version>3.2.9.RELEASE</spring.version>
+    <!--fastjson-->
+    <fastjson.version>1.2.29</fastjson.version>
     <!-- log4j日志文件管理包版本 -->
     <slf4j.version>1.6.6</slf4j.version>
     <log4j.version>1.2.12</log4j.version>
@@ -77,6 +82,12 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <!--kafka-->
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka_2.10</artifactId>
+      <version>${kafka.version}</version>
+    </dependency>
     <!-- 日志相关 -->
     <dependency>
       <groupId>log4j</groupId>
@@ -92,6 +103,12 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
       <version>${slf4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson.version}</version>
     </dependency>
 
     <dependency>
@@ -119,12 +136,6 @@
     </dependency>
 
     <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.1.39</version>
-    </dependency>
-
-    <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
       <artifactId>xstream</artifactId>
       <version>1.4.1</version>
@@ -134,18 +145,6 @@
       <groupId>org.apache.bsf</groupId>
       <artifactId>bsf-api</artifactId>
       <version>3.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.zookeeper</groupId>
-      <artifactId>zookeeper</artifactId>
-      <version>3.4.6</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.github.sgroschupf</groupId>
-      <artifactId>zkclient</artifactId>
-      <version>0.1</version>
     </dependency>
 
     <dependency>
@@ -313,7 +312,7 @@
 
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
+      <artifactId>spring-context</artifactId>
       <version>${spring.version}</version>
     </dependency>
 

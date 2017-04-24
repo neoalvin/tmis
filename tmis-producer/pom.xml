@@ -9,7 +9,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.neoalvin.tmis</groupId>
-  <artifactId>tmis-provider</artifactId>
+  <artifactId>tmis-producer</artifactId>
   <packaging>jar</packaging>
 
   <name>tmis-provider</name>
@@ -23,16 +23,6 @@
     <dependency>
       <groupId>com.neoalvin.tmis</groupId>
       <artifactId>tmis-api</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.neoalvin.tmis</groupId>
-      <artifactId>tmis-model</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.neoalvin.tmis</groupId>
-      <artifactId>tmis-common</artifactId>
       <version>1.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>

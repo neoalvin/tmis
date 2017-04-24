@@ -28,7 +28,7 @@ public class UserInfoDaoImplTest {
   /**
    * 测试查询用户
    */
-  @Test
+  //@Test
   public void testSelectUserInfo(){
     UserInfo userInfo = userInfoDao.selectUserInfoById("130420215");
     System.out.println(userInfo.toString());

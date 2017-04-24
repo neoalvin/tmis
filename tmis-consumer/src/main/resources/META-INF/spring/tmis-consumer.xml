@@ -7,6 +7,7 @@
 
   <dubbo:application name="tmis-consumer" owner="alvin" organization="hitwh"/>
 
+  <!--<dubbo:registry address="zookeeper://127.0.0.1:2181?backup=172.29.152.186:2181,172.29.152.185:2181,172.29.152.190:2181"/>-->
   <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
   <dubbo:reference id="userAuthService" interface="com.neoalvin.tmis.api.IUserAuthService"/>

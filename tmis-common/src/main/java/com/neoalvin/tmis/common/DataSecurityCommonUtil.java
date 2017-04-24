@@ -25,15 +25,25 @@ public abstract class DataSecurityCommonUtil {
    * @throws NoSuchAlgorithmException
    * @throws UnsupportedEncodingException
    */
-  public static String EncoderByMd5(String str) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+  public static String EncoderByMd5(String str) {
+    //入口日志
+    LOGGER.info("[DataSecurityCommonUtil]: Encode the password start.");
 
-    LOGGER.info("[UserInfoUtil]: Encode the password start.");
+    //定义加密后的密文字符串
+    String pwdCode = null;
 
-    //确定计算方法
-    MessageDigest md5=MessageDigest.getInstance("MD5");
-    BASE64Encoder base64en = new BASE64Encoder();
+    try {
 
-    //加密后的字符串
-    return base64en.encode(md5.digest(str.getBytes("utf-8")));
+      //确定计算方法
+      MessageDigest md5 = MessageDigest.getInstance("MD5");
+      BASE64Encoder base64en = new BASE64Encoder();
+
+      //加密后的字符串
+      pwdCode = base64en.encode(md5.digest(str.getBytes("utf-8")));
+    }
+    catch(Exception e){
+      LOGGER.error("[DataSecurityCommonUtil]: Encode the password failed. " + e.toString());
+    }
+    return pwdCode;
   }
 }
