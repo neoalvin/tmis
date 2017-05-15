@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neoalvin.tmis.dao.InterfaceWatchInfoDao">
+  <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
+  <resultMap id="BaseResultMap" type="com.neoalvin.tmis.model.InterfaceWatchInfo">
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="interface_service_count" property="interfaceCount" jdbcType="INTEGER" />
+    <result column="interface_service_call_count" property="interfaceCallSum" jdbcType="INTEGER" />
+    <result column="interface_service_server_count" property="serverCount" jdbcType="INTEGER" />
+  </resultMap>
+  <!-- 查询单条记录 -->
+  <select id="selectInterfaceWatchInfo" resultMap="BaseResultMap">
+    SELECT * FROM tmis_interface_service_watch_info WHERE id = 1
+  </select>
+  <update id="addInterfaceCallCount">
+    update tmis_interface_service_watch_info set interface_service_call_count = interface_service_call_count + 1 where id = 1
+  </update>
+  <update id="addInterfaceCount">
+    update tmis_interface_service_watch_info set interface_service_count = interface_service_count + 1 where id = 1
+  </update>
+</mapper>

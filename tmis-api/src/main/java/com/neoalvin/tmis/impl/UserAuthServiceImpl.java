@@ -3,6 +3,7 @@ package com.neoalvin.tmis.impl;
 import com.neoalvin.tmis.api.IUserAuthService;
 import com.neoalvin.tmis.common.CommonConstants;
 import com.neoalvin.tmis.common.DataSecurityCommonUtil;
+import com.neoalvin.tmis.common.InterfaceWatchCommonUtil;
 import com.neoalvin.tmis.common.ValidateCommonUtil;
 import com.neoalvin.tmis.dao.impl.UserInfoDaoImpl;
 import com.neoalvin.tmis.model.RetCode;
@@ -28,6 +29,7 @@ public class UserAuthServiceImpl implements IUserAuthService {
    * @return
    */
   public RetCode registryUser(UserInfo userInfo) {
+    InterfaceWatchCommonUtil.addInterfaceCallCount();
     //定义返回对象
     RetCode retCode = new RetCode();
 
@@ -71,6 +73,7 @@ public class UserAuthServiceImpl implements IUserAuthService {
    * @return
    */
   public RetCode validateUser(UserInfo userInfo) {
+    InterfaceWatchCommonUtil.addInterfaceCallCount();
     //定义返回信息对象
     RetCode retCode = new RetCode();
 

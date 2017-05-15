@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+  <dubbo:application name="tmis-producer" owner="alvin" organization="hitwh"/>
+
+  <!--<dubbo:registry address="zookeeper://127.0.0.1:2181?backup=172.29.152.186:2181,172.29.152.185:2181,172.29.152.190:2181"/>-->
+  <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+  <dubbo:protocol name="dubbo" serialization="kryo" optimizer="com.neoalvin.tmis.api.SerializationOptimizerImpl"/>
+
+  <!-- use tomcat server -->
+  <dubbo:protocol name="rest" port="8888" threads="500" contextpath="services" server="tomcat" accepts="500"
+                  extension="com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
+
+
+  <dubbo:service interface="com.neoalvin.tmis.api.IUserAuthService" ref="userAuthService" protocol="dubbo"/>
+  <dubbo:service interface="com.neoalvin.tmis.api.IUserAuthRestService" ref="userAuthRestService" protocol="rest" validation="true"/>
+
+  <dubbo:service interface="com.neoalvin.tmis.api.ITaskManageService" ref="taskManageService" protocol="dubbo"/>
+  <dubbo:service interface="com.neoalvin.tmis.api.ITaskManageRestService" ref="taskManageRestService" protocol="rest" validation="true"/>
+
+  <dubbo:service interface="com.neoalvin.tmis.api.IZookeeperService" ref="zookeeperService" protocol="dubbo"/>
+  <dubbo:service interface="com.neoalvin.tmis.api.IZookeeperRestService" ref="zookeeperRestService" protocol="rest" validation="true"/>
+
+  <dubbo:service interface="com.neoalvin.tmis.api.IKafkaSendMessageService" ref="kafkaSendMessageService" protocol="dubbo"/>
+  <dubbo:service interface="com.neoalvin.tmis.api.IkafkaSubscribeMessageService" ref="kafkaSubscribeMessageService" protocol="dubbo"/>
+
+  <bean id="userAuthService" class="com.neoalvin.tmis.impl.UserAuthServiceImpl"/>
+  <bean id="userAuthRestService" class="com.neoalvin.tmis.impl.UserAuthRestServiceImpl">
+    <property name="userAuthService" ref="userAuthService"/>
+  </bean>
+
+  <bean id="taskManageService" class="com.neoalvin.tmis.impl.TaskManageServiceImpl"/>
+  <bean id="taskManageRestService" class="com.neoalvin.tmis.impl.TaskManageRestServiceImpl">
+    <property name="taskManageService" ref="taskManageService"/>
+  </bean>
+
+  <bean id="zookeeperService" class="com.neoalvin.tmis.impl.ZookeeperServiceImpl"/>
+  <bean id="zookeeperRestService" class="com.neoalvin.tmis.impl.ZookeeperRestServiceImpl">
+    <property name="zookeeperService" ref="zookeeperService"/>
+  </bean>
+
+  <bean id="kafkaSendMessageService" class="com.neoalvin.tmis.impl.KafkaSendMessageServiceImpl"/>
+  <bean id="kafkaSubscribeMessageService" class="com.neoalvin.tmis.impl.kafkaSubscribeMessageServiceImpl"/>
+
+
+</beans>

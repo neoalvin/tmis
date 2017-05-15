@@ -1,5 +1,6 @@
 package com.neoalvin.tmis.model;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import javax.validation.constraints.NotNull;
@@ -9,6 +10,7 @@ import java.io.Serializable;
  * 用户身份信息数据类
  * Created by alvin on 2017/4/23.
  */
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class UserInfo implements Serializable {
   /**
    * 用户名

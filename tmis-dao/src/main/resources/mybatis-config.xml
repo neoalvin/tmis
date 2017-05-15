@@ -23,5 +23,6 @@
   <mappers>
     <!--引入映射文件 -->
     <mapper resource="UserInfoMapper.xml" />
+    <mapper resource="InterfaceWatchMapper.xml" />
   </mappers>
 </configuration>

@@ -32,5 +32,11 @@
       <artifactId>tmis-model</artifactId>
       <version>1.0.1-SNAPSHOT</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.neoalvin.tmis</groupId>
+      <artifactId>tmis-dao</artifactId>
+      <version>1.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>

@@ -1,7 +1,7 @@
 package com.neoalvin.tmis.validator;
 
 import com.neoalvin.tmis.model.RetCode;
-import com.neoalvin.tmis.model.job.CommitJobInput;
+import com.neoalvin.tmis.model.task.SubmitTaskInput;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +20,7 @@ public abstract class JobManageValidator {
    * @param input
    * @return
    */
-  public static RetCode validateCommitJobInput(CommitJobInput input)
+  public static RetCode validateCommitJobInput(SubmitTaskInput input)
   {
     //定义返回信息对象
     RetCode retCode = new RetCode();
