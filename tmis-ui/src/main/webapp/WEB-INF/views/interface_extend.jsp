@@ -16,15 +16,8 @@
   <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- NProgress -->
   <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
-  <!-- iCheck -->
-  <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
-  <!-- bootstrap-progressbar -->
-  <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-  <!-- JQVMap -->
-  <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
-  <!-- bootstrap-daterangepicker -->
-  <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+  <!-- Dropzone.js -->
+  <link href="vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
 
   <!-- Custom Theme Style -->
   <link href="build/css/custom.min.css" rel="stylesheet">
@@ -83,7 +76,7 @@
               </li>
               <li><a><i class="fa fa-clone"></i>接口扩展<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                  <li><a href="/interface_extend">新增接口</a></li>
+                  <li class="current-page"><a href="/interface_extend">新增接口</a></li>
                 </ul>
               </li>
             </ul>
@@ -138,15 +131,15 @@
       <div class="">
         <div class="page-title">
           <div class="title_left">
-            <h3>接口文档</h3>
+            <h3>接口扩展 </h3>
           </div>
 
           <div class="title_right">
             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="输入关键字...">
-                <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">搜索</button>
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">搜索</button>
                     </span>
               </div>
             </div>
@@ -156,32 +149,32 @@
         <div class="clearfix"></div>
 
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
               <div class="x_title">
-                <h2>userAuthRestService<small>用户认证接口服务</small></h2>
+                <h2>新增接口</h2>
                 <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
                 </ul>
                 <div class="clearfix"></div>
               </div>
               <div class="x_content">
-
-                <div class="col-md-8 col-lg-8 col-sm-7">
-                  <!-- blockquote -->
-                  <blockquote>
-                    <h2 style="color: #5bc0de">接口使用说明</h2>
-                    <p style="line-height: 40px;">userRestService是REST类型的接口，可以使用POST方式和URL直接调用，入参和返回值均为json形式，形如右图所示。</p>
-                  </blockquote>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-5">
-                  <h2 style="color: #5bc0de">URL</h2>
-                  <p style="height: 30px;">POST http://localhost:8888/user/validateUser</p>
-                  <h2 style="color: #5bc0de">入参</h2>
-                  <p style="height: 30px;">{"userId": "130420215","pwdCode": "alvin"}</p>
-                  <h2 style="color: #5bc0de">返回值</h2>
-                  <p style="height: 30px;">{"code": "0","message": "success"}</p>
-                </div>
-                <div class="clearfix"></div>
+                <p>添加接口源码文件</p>
+                <form action="uploadInterfaceFile"  method="post"
+                      enctype="multipart/form-data" class="dropzone"
+                      id="apiFileDropzone" style="min-height: 100px;"></form>
+              </div>
+              <div class="x_content">
+                <p>添加接口源码文件</p>
+                <form action="uploadInterfaceFile"  method="post"
+                      enctype="multipart/form-data" class="dropzone"
+                      id="implFileDropzone" style="min-height: 100px;"></form>
               </div>
             </div>
           </div>
@@ -209,35 +202,8 @@
 <script src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="vendors/nprogress/nprogress.js"></script>
-<!-- Chart.js -->
-<script src="vendors/Chart.js/dist/Chart.min.js"></script>
-<!-- gauge.js -->
-<script src="vendors/gauge.js/dist/gauge.min.js"></script>
-<!-- bootstrap-progressbar -->
-<script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-<!-- iCheck -->
-<script src="vendors/iCheck/icheck.min.js"></script>
-<!-- Skycons -->
-<script src="vendors/skycons/skycons.js"></script>
-<!-- Flot -->
-<script src="vendors/Flot/jquery.flot.js"></script>
-<script src="vendors/Flot/jquery.flot.pie.js"></script>
-<script src="vendors/Flot/jquery.flot.time.js"></script>
-<script src="vendors/Flot/jquery.flot.stack.js"></script>
-<script src="vendors/Flot/jquery.flot.resize.js"></script>
-<!-- Flot plugins -->
-<script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-<script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-<script src="vendors/flot.curvedlines/curvedLines.js"></script>
-<!-- DateJS -->
-<script src="vendors/DateJS/build/date.js"></script>
-<!-- JQVMap -->
-<script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
-<script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-<!-- bootstrap-daterangepicker -->
-<script src="vendors/moment/min/moment.min.js"></script>
-<script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- Dropzone.js -->
+<script src="vendors/dropzone/dist/min/dropzone.min.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="build/js/custom.min.js"></script>

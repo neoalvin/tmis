@@ -623,7 +623,7 @@ if (typeof NProgress != 'undefined') {
 			if ($('#world-map-gdp').length ){
 		 
 				$('#world-map-gdp').vectorMap({
-					map: 'world_en',
+					map: 'china_zh',
 					backgroundColor: null,
 					color: '#ffffff',
 					hoverOpacity: 0.7,

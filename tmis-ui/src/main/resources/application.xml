@@ -55,4 +55,32 @@
   <!--自动扫描注解的bean-->
   <context:component-scan base-package="com.neoalvin.tmis.service"/>
 
+  <bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="maxUploadSize" value="20971520" />
+    <property name="maxInMemorySize" value="4096" />
+  </bean>
+
+  <bean id="stringConverter"
+        class="org.springframework.http.converter.StringHttpMessageConverter">
+    <property name="supportedMediaTypes">
+      <list>
+        <value>text/plain;charset=UTF-8</value>
+      </list>
+    </property>
+  </bean>
+
+  <!-- 输出对象转JSON支持 -->
+  <bean id="jsonConverter"
+        class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
+  <bean
+          class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    <property name="messageConverters">
+      <list>
+        <ref bean="stringConverter" />
+        <ref bean="jsonConverter" />
+      </list>
+    </property>
+  </bean>
+
 </beans>

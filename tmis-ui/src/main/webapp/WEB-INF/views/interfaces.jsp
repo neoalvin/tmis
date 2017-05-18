@@ -78,10 +78,14 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i>接口测试<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">所有接口</a></li>
+                      <li><a href="/interface_test">所有接口</a></li>
                     </ul>
                   </li>
-                  <li><a href="#"><i class="fa fa-clone"></i>接口扩展</a></li>
+                  <li><a><i class="fa fa-clone"></i>接口扩展<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/interface_extend">新增接口</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
               <div class="menu_section">

@@ -44,4 +44,21 @@ public class IndexController {
     return mv;
   }
 
+  @RequestMapping("/interface_extend")
+  public ModelAndView getInterfaceExtend(){
+    ModelAndView mv = new ModelAndView();
+    mv.setViewName("interface_extend");
+    return mv;
+  }
+
+  @RequestMapping("/interface_test")
+  public ModelAndView getInterfaceTest(){
+    ModelAndView mv = new ModelAndView();
+    mv.setViewName("interface_test");
+    return mv;
+  }
+
+
+
+
 }
